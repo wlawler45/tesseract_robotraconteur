@@ -58,6 +58,7 @@ ROBOTRACONTEUR_GENERATE_THUNK(RR_THUNK_SRCS RR_THUNK_HDRS
     com.robotraconteur.robotics.trajectory.robdef
     com.robotraconteur.robotics.planning.robdef
     com.robotraconteur.identifier.robdef
+    com.robotraconteur.resource.robdef
     MASTER_HEADER
     IMPORT_DIRS ${CMAKE_CURRENT_SOURCE_DIR} ${RobotRaconteur_STANDARD_ROBDEF_DIRS}
 )
