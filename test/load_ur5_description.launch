@@ -1,0 +1,10 @@
+<launch>
+     <param name="robot_description"
+      command="$(find xacro)/xacro --inorder $(find ur_description)/urdf/ur5_robot.urdf.xacro
+      gazebo:=true electric_gripper:=true
+      pedestal:=true static:=true"/>
+
+    <param name="robot_description_semantic"
+      textfile="$(find ur5_moveit_config)/config/ur5.srdf"/>
+
+</launch>

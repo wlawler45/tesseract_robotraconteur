@@ -8,25 +8,32 @@ robot.command_mode=3
 start_waypoint = RRN.NewStructure('com.robotraconteur.robotics.planning.JointWaypoint',c)
 end_waypoint = RRN.NewStructure('com.robotraconteur.robotics.planning.JointWaypoint',c)
 
-start_waypoint.joint_positions = np.ones((7,))*.1
+start_waypoint.joint_positions = np.ones((6,))*.1
+start_waypoint.joint_positions[0]=0.537#0.3
+start_waypoint.joint_positions[1]=-1.004#-1.0
+start_waypoint.joint_positions[2]=-0.067#0.2
+start_waypoint.joint_positions[3]=-1.349#1.5
+start_waypoint.joint_positions[4]=-0.169#0.2
+start_waypoint.joint_positions[5]=-0.0616#0.2
+#start_waypoint.joint_positions[6]=0.0#0.2]]
 start_waypoint.coeffs = np.ones((1,))
 start_waypoint.is_critical=True
 
-end_waypoint.joint_positions = np.ones((7,))*.01
+end_waypoint.joint_positions = np.ones((6,))*.01
 end_waypoint.joint_positions[0]=0.0#0.3
 end_waypoint.joint_positions[1]=0.0#-1.0
 end_waypoint.joint_positions[2]=0.0#0.2
 end_waypoint.joint_positions[3]=0.0#1.5
 end_waypoint.joint_positions[4]=0.0#0.2
 end_waypoint.joint_positions[5]=0.0#0.2
-end_waypoint.joint_positions[6]=0.0#0.2
+#end_waypoint.joint_positions[6]=0.0#0.2
 print(end_waypoint.joint_positions)
 end_waypoint.coeffs = np.ones((1,))
 end_waypoint.is_critical=True
 
 planning_request = RRN.NewStructure('com.robotraconteur.robotics.planning.PlanningRequest',c)
 planning_request.device = RRN.NewStructure('com.robotraconteur.identifier.Identifier',c)
-planning_request.device.name = "right_arm"
+planning_request.device.name = "manipulator"
 uuid_dt = RRN.GetNamedArrayDType('com.robotraconteur.uuid.UUID',c)
 planning_request.device.uuid=np.zeros((1,), uuid_dt)
 box_dt = RRN.GetNamedArrayDType('com.robotraconteur.geometry.Box',c)

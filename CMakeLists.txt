@@ -15,8 +15,6 @@ find_package(catkin REQUIRED COMPONENTS
   roslib
 )
 
-find_package(RobotRaconteur REQUIRED)
-find_package(RobotRaconteur_standard_robdef_cpp REQUIRED)
 find_package(tesseract REQUIRED)
 find_package(tesseract_environment REQUIRED)
 find_package(tesseract_kinematics REQUIRED)
@@ -26,6 +24,8 @@ find_package(trajopt_utils REQUIRED)
 find_package(trajopt_sco REQUIRED)
 find_package(tesseract_motion_planners REQUIRED)
 find_package(Bullet REQUIRED)
+find_package(RobotRaconteur REQUIRED)
+find_package(RobotRaconteur_standard_robdef_cpp REQUIRED)
 
 include_directories(${RobotRaconteur_INCLUDE_DIR} 
                     ${CMAKE_CURRENT_BINARY_DIR}
